@@ -2,7 +2,7 @@ import type { DeployFunction } from "hardhat-deploy/types";
 
 const func: DeployFunction = async ({ getNamedAccounts, deployments }) => {
   const { deployer } = await getNamedAccounts();
-  await deployments.deploy("Told", {
+  await deployments.deploy("ToldSo", {
     from: deployer,
     log: true,
   });
@@ -10,4 +10,4 @@ const func: DeployFunction = async ({ getNamedAccounts, deployments }) => {
 
 export default func;
 
-func.tags = ["Told"];
+func.tags = ["ToldSo"];

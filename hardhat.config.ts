@@ -17,12 +17,12 @@ const config: HardhatUserConfig = {
     },
     matic: {
       chainId: 137,
-      url: "https://rpc-mainnet.maticvigil.com ",
+      url: "https://rpc-mainnet.maticvigil.com",
       accounts: [process.env.PRIVATE_KEY],
     },
     mumbai: {
       chainId: 80001,
-      url: process.env.MUMBAI_URL,
+      url: "https://matic-mumbai.chainstacklabs.com/",
       accounts: [process.env.PRIVATE_KEY],
     },
   },

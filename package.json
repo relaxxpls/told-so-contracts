@@ -1,6 +1,11 @@
 {
-  "name": "told-so-contracts",
+  "name": "@told-so/contracts",
+  "version": "0.1.0",
+  "description": "Told So - Preserve Your Thoughts",
+  "author": "Laxman Desai <desai.laxman2001@gmail.com> (https://github.com/relaxxpls)",
+  "repository": "https://github.com/relaxxpls/told-so-contracts.git",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "compile": "hardhat compile",
     "types": "hardhat typechain",
@@ -8,8 +13,8 @@
     "deploy": "hardhat deploy --network mumbai --export deployments.json",
     "verify": "hardhat verify"
   },
-
   "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "4.8.0",
     "dotenv": "^16.0.3"
   },
   "devDependencies": {
@@ -32,6 +37,7 @@
     "eslint-config-web": "^0.13.0",
     "ethers": "^5.7.2",
     "hardhat": "^2.12.2",
+    "hardhat-contract-sizer": "2.6.1",
     "hardhat-deploy": "^0.11.20",
     "hardhat-gas-reporter": "^1.0.9",
     "mocha": "^10.1.0",
