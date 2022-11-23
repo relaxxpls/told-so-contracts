@@ -10,7 +10,7 @@
     "compile": "hardhat compile",
     "types": "hardhat typechain",
     "test": "hardhat test --network hardhat",
-    "deploy": "hardhat deploy --network mumbai --export deployments.json",
+    "deploy": "hardhat deploy --network matic --export deployments.json",
     "verify": "hardhat verify"
   },
   "dependencies": {
