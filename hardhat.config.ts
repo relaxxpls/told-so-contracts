@@ -1,6 +1,7 @@
 import "@nomicfoundation/hardhat-toolbox";
 import dotenv from "dotenv";
 import "hardhat-deploy";
+import "hardhat-contract-sizer";
 
 import type { HardhatUserConfig } from "hardhat/config";
 
@@ -35,6 +36,19 @@ const config: HardhatUserConfig = {
       polygon: process.env.POLYGONSCAN_API_KEY,
       polygonMumbai: process.env.POLYGONSCAN_API_KEY,
     },
+  },
+  gasReporter: {
+    enabled: true,
+    currency: "MATIC",
+    token: "MATIC",
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+    showTimeSpent: true,
+    gasPriceApi:
+      "https://api.polygonscan.com/api?module=proxy&action=eth_gasPrice",
+  },
+  contractSizer: {
+    runOnCompile: true,
+    strict: true,
   },
   typechain: {
     outDir: "./types",

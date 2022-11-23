@@ -58,5 +58,18 @@ describe("ToldSo", () => {
           .updatePost(1, "Hello World", "I am Alice", "")
       ).to.be.revertedWith("ToldSo: Post does not exist");
     });
+
+    it("Should be able to post 1000 times", async () => {
+      const promises = new Array(1000).fill(0).map(async (_, i) => {
+        const tx = await toldSo
+          .connect(await ethers.getSigner(alice))
+          .createPost(`Post ${i}`, "", "");
+        await tx.wait();
+      });
+      await expect(Promise.all(promises)).to.be.fulfilled;
+
+      const posts = await toldSo.getPosts(alice);
+      expect(posts).to.have.lengthOf(1001);
+    });
   });
 });
